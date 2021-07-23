@@ -1,0 +1,52 @@
+button, input, a{
+	&:focus, &:focus-visible{
+		outline: none !important;
+		box-shadow: none !important;
+	}
+}
+
+
+body{
+	font-family: 'Arimo', sans-serif;
+	letter-spacing: 0.01em;
+}
+.header__logo{
+    font-family: $font-header;
+    color: $font-color-dark;
+}
+.banner{
+    @include banner;
+    
+}
+.banner_home{
+    @include backgrounds("../media/entrada.jpg");
+}
+.texto_home{
+    width: 100%; 
+    min-height: 20%;   
+    background-color:rgba(0, 0, 0, 0.3) ;
+    position: absolute;
+    top: 23%;
+    .title_home{
+        position: absolute;
+        top: 23%;
+        left: 25%;        
+        color: $font-color-white;
+    }
+
+}
+.titulo_main h2{
+    @extend .header__logo;
+    font-size: 64px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+.sectionImages{
+    min-height: 350px;
+}
+.bgMainHome{
+    @include backgrounds("../media/foto3.jpg");
+}
+.bgMainHome1{
+    @include backgrounds("../media/foto4.jpg");
+}

@@ -1,0 +1,39 @@
+@mixin transitions($time){
+	-webkit-transition: all #{$time}ms ease-in-out;
+	-moz-transition: all #{$time}ms ease-in-out;
+	-ms-transition: all #{$time}ms ease-in-out;
+	-o-transition: all #{$time}ms ease-in-out;
+	transition: all #{$time}ms ease-in-out;
+}
+@mixin borders($amount){
+	-webkit-border-radius: $amount $amount $amount $amount;
+	border-radius: $amount $amount $amount $amount;
+}
+@mixin backgrounds($image){
+	background-image: url($image);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+@mixin buttons($bgColor, $fontColor){
+	@include borders(.75em);
+	background-color: $bgColor;
+	color: $fontColor;
+	font-size: 20px;
+	padding: .5rem 1.5rem;
+	text-decoration: none;
+	font-weight: $font-weight-bold;
+	@include transitions(250);
+	&:hover{
+		transform: scale(1.05);
+	}
+}
+@mixin banner {
+    min-height: 50vh;   
+    padding-bottom: 20%;
+    
+}
+#siteFooter{
+	border-top: 2px solid #262626;
+	background-color: rgba(0, 0, 0, 0.3);
+}
