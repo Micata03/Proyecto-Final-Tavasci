@@ -7,7 +7,7 @@ button, input, a{
 
 
 body{
-	font-family: 'Arimo', sans-serif;
+	font-family: $font-text-alt, sans-serif;
 	letter-spacing: 0.01em;
 }
 .header__logo{
@@ -24,7 +24,7 @@ body{
 .texto_home{
     width: 100%; 
     min-height: 20%;   
-    background-color:rgba(0, 0, 0, 0.3) ;
+    background-color:$bg-color-opacity ;
     position: absolute;
     top: 23%;
     .title_home{
@@ -35,7 +35,7 @@ body{
     }
 
 }
-.titulo_main h2{
+.titulo_main h2 {
     @extend .header__logo;
     font-size: 64px;
     margin-top: 5%;
@@ -44,9 +44,88 @@ body{
 .sectionImages{
     min-height: 350px;
 }
+.contenido{
+	
+	width: 50vh;	
+}
+.caja_columna{
+    color: #0f222b;	
+    background: none;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 260px;
+    margin: 10px; 
+    background-color:transparent ;
+    .texto{
+    position: absolute;
+    top: -10px;
+    bottom: 15px;
+    border: none;
+    padding: 43px;
+	font-size: 1em;      
+    }
+}   
+svg,rect{
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+}
+rect{
+    stroke:$font-color-dark ;
+    stroke-width: 9;
+    stroke-dasharray: 1800;
+    animation: aparece 3s, animate 2s 3s linear; 
+}
+/*Animaciones caja banner*/
+@keyframes aparece{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 0;
+    }
+  }
+  @keyframes animate{
+      0%{
+          stroke-dashoffset: 1800;
+      }
+     
+      100%{
+          stroke-dashoffset: 0;
+      }
+  }
+  @keyframes desaparece{
+    from{
+      opacity: 1;
+    }
+    to{
+      opacity: 0;
+    }
+  }
 .bgMainHome{
     @include backgrounds("../media/foto3.jpg");
 }
 .bgMainHome1{
     @include backgrounds("../media/foto4.jpg");
 }
+.banner_servicios{
+    @include backgrounds("../media/vista.jpg");
+}
+.servicios img{
+	border-radius: 50%;
+	width: 200px;    
+    box-shadow: -1px 6px 12px 1px rgba(0,0,0,0.57);;
+}
+
+
+
+
+
+#siteFooter{
+	border-top: 2px solid $font-color-dark;
+	background-color: $bg-color-opacity;
+}
+

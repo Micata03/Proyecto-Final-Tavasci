@@ -13,7 +13,8 @@
 	background-image: url($image);
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover;	
+	box-shadow: -1px 6px 12px 1px rgba(0,0,0,0.57);
 }
 @mixin buttons($bgColor, $fontColor){
 	@include borders(.75em);
@@ -33,7 +34,12 @@
     padding-bottom: 20%;
     
 }
-#siteFooter{
-	border-top: 2px solid #262626;
-	background-color: rgba(0, 0, 0, 0.3);
+@mixin svg {
+	width: 50%;
+	min-height: 2px;
+	background-color: $font-color-dark;
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	
 }
