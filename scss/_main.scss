@@ -106,20 +106,156 @@ rect{
     }
   }
 .bgMainHome{
-    @include backgrounds("../media/foto3.jpg");
+    @include backgrounds("../media/foto3.jpg"); 
+    
 }
 .bgMainHome1{
     @include backgrounds("../media/foto4.jpg");
 }
+.parrafo p{
+    @include parrafo;
+}
 .banner_servicios{
     @include backgrounds("../media/vista.jpg");
+}
+.banner_abono{
+    @include backgrounds("../media/foto2.jpg");
 }
 .servicios img{
 	border-radius: 50%;
 	width: 200px;    
     box-shadow: -1px 6px 12px 1px rgba(0,0,0,0.57);;
 }
+/* *****ABONOS*********/
+.pricing-area{
+    margin-bottom: 5%;
+}
+.single-price {
+  text-align: center;
+  background: transparent;
+  border: $border;
+  transition: .7s;
+  margin-top: 20px;
+    .deal-top h3 {
+        font-size: 25px;
+        color: $font-color-dark;
+        font-weight: 600;
+        text-align: center;
+        margin: 0;
+        margin-top: -80px;  
+        color: $font-color-white;    
+    }
+     h4 {
+        font-size: 48px;
+        font-weight: 500;
+        color: #fff;
+    
+        span.sup {
+        vertical-align: text-top;
+        font-size: 25px;
+        }  
+    }
+}          
+.deal-top {
+  position: relative;
+  background: #262626;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 136px 24px 0;
+}
 
+.deal-bottom {
+  padding: 56px 16px 0;
+     ul {
+  margin: 0;
+  padding: 0;
+     li {
+  font-size: 16px;
+  color: $font-color-dark;
+  font-weight: 300;
+  margin-top: 16px;
+  margin-bottom: 26px;
+  border-top: $border;
+  padding-top: 16px;
+  list-style: none;
+     }
+    }   
+}
+/***********Hover Imagen Banner***************/
+.hover-img {
+  background-color: #000;
+  color: $font-color-white;
+  display: inline-block;
+ 
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.hover-img * {
+  box-sizing: border-box;
+  transition: all 0.45s ease;
+}
+
+.hover-img:before,
+.hover-img:after {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 32px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 32px solid rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0;
+  transform: scaleY(2);
+}
+
+.hover-img img {
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+
+.hover-img figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1em;
+  opacity: 0;
+  z-index: 2;
+  transition-delay: 0.1s;
+  font-size: 24px;
+  font-family: sans-serif;
+  font-weight: 400;
+  
+  text-transform: uppercase;
+}
+
+.hover-img:hover:before,
+.hover-img:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.hover-img:hover > img {
+  opacity: 0.7;
+}
+
+.hover-img:hover figcaption {
+  opacity: 1;
+}
 
 
 

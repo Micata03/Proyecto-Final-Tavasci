@@ -32,14 +32,14 @@
 @mixin banner {
     min-height: 50vh;   
     padding-bottom: 20%;
+	
     
 }
-@mixin svg {
-	width: 50%;
-	min-height: 2px;
-	background-color: $font-color-dark;
+@mixin parrafo {
 	display: flex;
 	margin-left: auto;
 	margin-right: auto;
+	font-size: 1rem;
+	line-height: 1.7;
 	
 }
