@@ -1,8 +1,3 @@
-#siteFooter {
-  border-top: 2px solid #262626;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 /* **********************************
      Navbar
 ************************************* */
@@ -229,7 +224,7 @@ button:focus, button:focus-visible, input:focus, input:focus-visible, a:focus, a
 }
 
 body {
-  font-family: 'Arimo', sans-serif;
+  font-family: "Bebas Neue", cursive, sans-serif;
   letter-spacing: 0.01em;
 }
 
@@ -248,6 +243,8 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+          box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
 }
 
 .texto_home {
@@ -275,11 +272,107 @@ body {
   min-height: 350px;
 }
 
+.contenido {
+  width: 50vh;
+}
+
+.caja_columna {
+  color: #0f222b;
+  background: none;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 260px;
+  margin: 10px;
+  background-color: transparent;
+}
+
+.caja_columna .texto {
+  position: absolute;
+  top: -10px;
+  bottom: 15px;
+  border: none;
+  padding: 43px;
+  font-size: 1em;
+}
+
+svg, rect {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+}
+
+rect {
+  stroke: #212126;
+  stroke-width: 9;
+  stroke-dasharray: 1800;
+  -webkit-animation: aparece 3s, animate 2s 3s linear;
+          animation: aparece 3s, animate 2s 3s linear;
+}
+
+/*Animaciones caja banner*/
+@-webkit-keyframes aparece {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes aparece {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes animate {
+  0% {
+    stroke-dashoffset: 1800;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate {
+  0% {
+    stroke-dashoffset: 1800;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes desaparece {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes desaparece {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .bgMainHome {
   background-image: url("../media/foto3.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+          box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
 }
 
 .bgMainHome1 {
@@ -287,5 +380,200 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+          box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+}
+
+.parrafo p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.banner_servicios {
+  background-image: url("../media/vista.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+          box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+}
+
+.banner_abono {
+  background-image: url("../media/foto2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+          box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+}
+
+.servicios img {
+  border-radius: 50%;
+  width: 200px;
+  -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+          box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+}
+
+/* *****ABONOS*********/
+.pricing-area {
+  margin-bottom: 5%;
+}
+
+.single-price {
+  text-align: center;
+  background: transparent;
+  border: 1px solid #262626;
+  -webkit-transition: .7s;
+  transition: .7s;
+  margin-top: 20px;
+}
+
+.single-price .deal-top h3 {
+  font-size: 25px;
+  color: #212126;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  margin-top: -80px;
+  color: #fff;
+}
+
+.single-price h4 {
+  font-size: 48px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.single-price h4 span.sup {
+  vertical-align: text-top;
+  font-size: 25px;
+}
+
+.deal-top {
+  position: relative;
+  background: #262626;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 136px 24px 0;
+}
+
+.deal-bottom {
+  padding: 56px 16px 0;
+}
+
+.deal-bottom ul {
+  margin: 0;
+  padding: 0;
+}
+
+.deal-bottom ul li {
+  font-size: 16px;
+  color: #212126;
+  font-weight: 300;
+  margin-top: 16px;
+  margin-bottom: 26px;
+  border-top: 1px solid #262626;
+  padding-top: 16px;
+  list-style: none;
+}
+
+/***********Hover Imagen Banner***************/
+.hover-img {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.hover-img * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+
+.hover-img:before,
+.hover-img:after {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 32px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 32px solid rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transform: scaleY(2);
+          transform: scaleY(2);
+}
+
+.hover-img img {
+  vertical-align: top;
+  max-width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.hover-img figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 1.1em;
+  opacity: 0;
+  z-index: 2;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+  font-size: 24px;
+  font-family: sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.hover-img:hover:before,
+.hover-img:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.hover-img:hover > img {
+  opacity: 0.7;
+}
+
+.hover-img:hover figcaption {
+  opacity: 1;
+}
+
+#siteFooter {
+  border-top: 2px solid #212126;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 /*# sourceMappingURL=style.css.map */
