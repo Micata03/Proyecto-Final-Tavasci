@@ -116,7 +116,7 @@ body{
 .contenido{
 	
 	min-width: 50vh;	
-  padding-block: min(10vw, 10rem);
+  padding-block: min(5rem, 10rem);
 }
 .caja_columna{
     color: #0f222b;	
@@ -127,54 +127,16 @@ body{
     height: 260px;
     margin: 10px; 
     background-color:transparent ;
+    
     .texto{
     position: absolute;
     top: -10px;
     bottom: 15px;
-    border: none;
-    padding-block: min(10vw, 10rem);
-	font-size: calc(12px + 0.2vw);      
+    border: none;    
+	  font-size: calc(12px + 0.2vw);      
     }
 }   
-svg,rect{
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    fill: transparent;
-}
-rect{
-    stroke:$font-color-dark ;
-    stroke-width: 9;
-    stroke-dasharray: 1800;
-    animation: aparece 3s, animate 2s 3s linear; 
-}
-/*Animaciones caja banner*/
-@keyframes aparece{
-    from{
-      opacity: 0;
-    }
-    to{
-      opacity: 0;
-    }
-  }
-  @keyframes animate{
-      0%{
-          stroke-dashoffset: 1800;
-      }
-     
-      100%{
-          stroke-dashoffset: 0;
-      }
-  }
-  @keyframes desaparece{
-    from{
-      opacity: 1;
-    }
-    to{
-      opacity: 0;
-    }
-  }
+
 .bgMainHome{
     @include backgrounds("../media/foto3.jpg"); 
     
@@ -199,7 +161,7 @@ rect{
 	border-radius: 50%;
 	width: 100%;    
   box-shadow: -1px 6px 12px 1px rgba(0,0,0,0.57);;
-  padding-block: min(10vw, 10rem);
+  //padding-block: min(10rem, 10rem);
 }
 /* *****ABONOS hoo*********/
 .pricing-area{
@@ -334,9 +296,25 @@ rect{
 
 
 /*********FORMULARIO DE CONTACTO*****/
+form{
+  margin-left: 20%;
+  margin-top: 5%;
+  
+  
+}
+.form-control{
+  width: 50%;
+  
+}
 
-.contacto h1{
-  color: rebeccapurple;
+/********RESERVAS*****/
+.img_construccion{
+  
+  margin-left: 25%;
+}
+.texto_construccion p{
+  font-size: 3rem;
+  text-align: center;
 }
 
 #siteFooter{
