@@ -76,6 +76,7 @@
 }
 a, a:visited, a:hover {
   text-decoration: none;
+  
 }
 
 
@@ -127,7 +128,7 @@ a, a:visited, a:hover {
 
 .header {
   position: relative;
-  z-index: 1;
+  z-index: 5;
   
 }
 
@@ -223,4 +224,8 @@ a, a:visited, a:hover {
 .header__links a:hover::before {
   opacity: 1;
 }
-
+.header__menu a{
+  display: block;
+  margin: auto;
+  color: #fff;
+}

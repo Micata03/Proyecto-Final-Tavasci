@@ -15,6 +15,19 @@ body{
     color: $font-color-dark;
 }
 
+.hide-for-mobile {
+  @include breakpoint-down(medium){
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large){
+    display: none;
+  }
+}
+
+
 .banner{
   @include banner;
 }
@@ -117,21 +130,7 @@ body{
 	
 	min-width: 50vh;	
   padding-block: min(5rem, 10rem);
-}
-.caja_columna{
-    color: #0f222b;	
-    background: none;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    height: 260px;
-    margin: 10px; 
-    background-color:transparent ;
-    
-    .texto{
-    position: absolute;
-    top: -10px;
-    bottom: 15px;
+    .texto{    
     border: none;    
 	  font-size: calc(12px + 0.2vw);      
     }
@@ -161,9 +160,13 @@ body{
 	border-radius: 50%;
 	width: 100%;    
   box-shadow: -1px 6px 12px 1px rgba(0,0,0,0.57);;
-  //padding-block: min(10rem, 10rem);
+   
 }
-/* *****ABONOS hoo*********/
+.servicios h4{
+  font-size: 1.3rem;
+  padding-top: 6%;
+}
+/* *****ABONOS *********/
 .pricing-area{
     margin-bottom: 5%;
 }
@@ -309,8 +312,12 @@ form{
 
 /********RESERVAS*****/
 .img_construccion{
+  min-height: 100vh;
+  width: 70%;
+ @include backgrounds("../media/working.jpg");
+ box-shadow: none;
+ margin-left: 15%; 
   
-  margin-left: 25%;
 }
 .texto_construccion p{
   font-size: 3rem;

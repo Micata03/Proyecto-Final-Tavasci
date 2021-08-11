@@ -26,3 +26,9 @@ btnHamburger.addEventListener('click', function(){
 
   }  
 });
+
+const typeWriter = document.getElementById('typewriter-text');
+const text = 'COWORKING';
+
+typeWriter.innerHTML = text;
+typeWriter.style.setProperty('--characters', text.length);
