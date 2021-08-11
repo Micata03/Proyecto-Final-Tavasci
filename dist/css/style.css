@@ -1,3 +1,16 @@
+/*@mixin buttons($bgColor, $fontColor){
+	@include borders(.75em);
+	background-color: $bgColor;
+	color: $fontColor;
+	font-size: 20px;
+	padding: .5rem 1.5rem;
+	text-decoration: none;
+	font-weight: $font-weight-bold;
+	@include transitions(250);
+	&:hover{
+		transform: scale(1.05);
+	}
+}*/
 /* **********************************
      Navbar
 ************************************* */
@@ -124,7 +137,7 @@ a, a:visited, a:hover {
 
 .header {
   position: relative;
-  z-index: 1;
+  z-index: 5;
 }
 
 .header.open .header__toggle > span:first-child {
@@ -217,6 +230,12 @@ a, a:visited, a:hover {
   opacity: 1;
 }
 
+.header__menu a {
+  display: block;
+  margin: auto;
+  color: #fff;
+}
+
 button:focus, button:focus-visible, input:focus, input:focus-visible, a:focus, a:focus-visible {
   outline: none !important;
   -webkit-box-shadow: none !important;
@@ -233,18 +252,123 @@ body {
   color: #212126;
 }
 
+@media (max-width: 63.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
 .banner {
   min-height: 50vh;
   padding-bottom: 20%;
 }
 
-.banner_home {
+.hero {
+  width: 100%;
+  height: 300px;
   background-image: url("../media/entrada.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
           box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+  position: relative;
+  z-index: 0;
+  margin-bottom: 5%;
+}
+
+.hero::before {
+  content: "";
+  width: 100%;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.71);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.hero-detail {
+  border: 1px solid transparent;
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+}
+
+.hero-detail h1 {
+  margin-top: 2.2em;
+  font-size: 4.5em;
+}
+
+.typewriter-effect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: monospace;
+}
+
+.typewriter-effect > .text {
+  max-width: 0;
+  -webkit-animation: typing 3s steps(var(--characters)) infinite;
+          animation: typing 3s steps(var(--characters)) infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: calc(14px + 12vw);
+}
+
+.typewriter-effect:after {
+  content: " ";
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+}
+
+@-webkit-keyframes typing {
+  75%,
+  100% {
+    max-width: calc(var(--characters) * 1ch);
+  }
+}
+
+@keyframes typing {
+  75%,
+  100% {
+    max-width: calc(var(--characters) * 1ch);
+  }
+}
+
+@-webkit-keyframes blink {
+  0%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
 }
 
 .texto_home {
@@ -273,97 +397,13 @@ body {
 }
 
 .contenido {
-  width: 50vh;
+  min-width: 50vh;
+  padding-block: 5rem;
 }
 
-.caja_columna {
-  color: #0f222b;
-  background: none;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  height: 260px;
-  margin: 10px;
-  background-color: transparent;
-}
-
-.caja_columna .texto {
-  position: absolute;
-  top: -10px;
-  bottom: 15px;
+.contenido .texto {
   border: none;
-  padding: 43px;
-  font-size: 1em;
-}
-
-svg, rect {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  fill: transparent;
-}
-
-rect {
-  stroke: #212126;
-  stroke-width: 9;
-  stroke-dasharray: 1800;
-  -webkit-animation: aparece 3s, animate 2s 3s linear;
-          animation: aparece 3s, animate 2s 3s linear;
-}
-
-/*Animaciones caja banner*/
-@-webkit-keyframes aparece {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes aparece {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes animate {
-  0% {
-    stroke-dashoffset: 1800;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes animate {
-  0% {
-    stroke-dashoffset: 1800;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@-webkit-keyframes desaparece {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes desaparece {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  font-size: calc(12px + 0.2vw);
 }
 
 .bgMainHome {
@@ -412,14 +452,28 @@ rect {
           box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
 }
 
-.servicios img {
-  border-radius: 50%;
-  width: 200px;
+.banner_contacto {
+  background-image: url("../media/entrada.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
           box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
 }
 
-/* *****ABONOS*********/
+.servicios img {
+  border-radius: 50%;
+  width: 100%;
+  -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+          box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+}
+
+.servicios h4 {
+  font-size: 1.3rem;
+  padding-top: 6%;
+}
+
+/* *****ABONOS hoo*********/
 .pricing-area {
   margin-bottom: 5%;
 }
@@ -570,6 +624,36 @@ rect {
 
 .hover-img:hover figcaption {
   opacity: 1;
+}
+
+/*********FORMULARIO DE CONTACTO*****/
+form {
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+.form-control {
+  width: 50%;
+}
+
+/********RESERVAS*****/
+.img_construccion {
+  min-height: 100vh;
+  width: 70%;
+  background-image: url("../media/working.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+          box-shadow: -1px 6px 12px 1px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-left: 15%;
+}
+
+.texto_construccion p {
+  font-size: 3rem;
+  text-align: center;
 }
 
 #siteFooter {
